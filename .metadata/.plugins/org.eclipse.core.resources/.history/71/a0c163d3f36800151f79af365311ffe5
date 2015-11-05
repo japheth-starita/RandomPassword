@@ -1,0 +1,24 @@
+
+
+public class Random1 {
+	public static void main(String[]args){
+		int ran = genprivateNum();
+		while(!(isPrime(ran))){
+			ran+=1;
+		}
+		System.out.println("Private Key: "+ran);
+		
+		ran = genpublicNum();
+		while(!(isPrime(ran))){
+			ran+=1;
+		}
+		System.out.println("Public Key: " +ran);
+	}
+	
+
+	
+	
+	
+	
+	
+}

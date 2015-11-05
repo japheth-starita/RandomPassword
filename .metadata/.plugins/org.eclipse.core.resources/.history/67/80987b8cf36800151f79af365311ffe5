@@ -1,0 +1,12 @@
+import java.util.concurrent.ThreadLocalRandom;
+
+public class Process {
+	private int privKey;
+	private int pubKey;
+	private int prodKey;
+	
+	public int genprivKey(){
+		
+		return ran;
+	}
+}

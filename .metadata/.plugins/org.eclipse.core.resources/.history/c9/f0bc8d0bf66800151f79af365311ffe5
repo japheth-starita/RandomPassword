@@ -1,0 +1,32 @@
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.Scanner;
+
+
+public class Random1 {
+	public static void main(String[]args){
+		Process p = new Process();
+		Scanner s = new Scanner(System.in);
+		int ran = genprivateNum();
+		while(!(p.isPrime(ran))){
+			ran+=1;
+		}
+		p.setPrivateKey(ran);
+		System.out.println("Public Key: "+ p.Request());
+		System.out.println("Access Verified? " + p.Verify(s.nextInt()));
+		s.close();
+	}
+	
+
+	
+	private static int genprivateNum(){
+		int min = 10;
+		int max = 100;
+		int ran;
+		ran = ThreadLocalRandom.current().nextInt(min, max + 1);
+		
+		return ran;
+	}
+	
+	
+	
+}

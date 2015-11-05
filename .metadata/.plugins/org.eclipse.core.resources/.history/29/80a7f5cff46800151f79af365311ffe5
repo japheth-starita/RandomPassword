@@ -1,0 +1,28 @@
+import java.util.concurrent.ThreadLocalRandom;
+
+
+
+public class Random1 {
+	public static void main(String[]args){
+		Process p = new Process();
+		int ran = genPriv
+		while(!(isPrime(ran))){
+			ran+=1;
+		}
+	
+	}
+	
+
+	
+	public int genprivateNum(){
+		int min = 10;
+		int max = 100;
+		int ran;
+		ran = ThreadLocalRandom.current().nextInt(min, max + 1);
+		
+		return ran;
+	}
+	
+	
+	
+}

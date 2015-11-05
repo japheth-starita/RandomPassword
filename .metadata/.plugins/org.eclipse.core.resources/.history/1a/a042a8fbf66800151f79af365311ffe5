@@ -1,0 +1,56 @@
+import java.util.concurrent.ThreadLocalRandom;
+
+public class Process {
+	private int privKey;
+	private int pubKey;
+	private int prodKey;
+	
+	
+	public void setPrivateKey(int key){
+		key = privKey;
+		System.out.println(privKey);
+	}
+	
+	private int genpublicNum(){
+		int min = 1000;
+		int max = 10000;
+		int ran;
+		ran = ThreadLocalRandom.current().nextInt(min, max + 1);
+		while(!(isPrime(ran))){
+			ran+=1;
+		}
+		return ran;
+	}
+		
+	public boolean isPrime(int n) {
+	    // fast even test.
+	    if(n > 2 && (n & 1) == 0)
+	       return false;
+	    // only odd factors need to be tested up to n^0.5
+	    for(int i = 3; i * i <= n; i += 2)
+	        if (n % i == 0) 
+	            return false;
+	    return true;
+	}
+	
+	public int Request(){
+		pubKey = genpublicNum();
+		prodKey = privKey * pubKey;
+		System.out.println(pubKey);
+		return pubKey;
+	}
+	
+	public boolean Verify(int num){
+		privKey = 0;
+		pubKey = 0;
+		if (num == prodKey){
+			return true;
+		}
+		else{
+			System.out.println(prodKey);
+			return false;
+		}
+		
+	}
+	
+}

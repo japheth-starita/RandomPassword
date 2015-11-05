@@ -1,0 +1,6 @@
+
+public class Process {
+	private int privKey;
+	private int pubKey;
+	private int prodKey;
+}
